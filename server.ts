@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import {
   INITIAL_USER,
   INITIAL_CAMPAIGNS,
@@ -18,9 +17,6 @@ import { Campaign, WebsiteMonitor, ReferralLink, LiveLog } from './src/types.js'
 import { executeSingleSimulatedSession, isPrivateHost } from './server/simulationEngine.js';
 import { checkWebsiteHealth } from './server/monitoringEngine.js';
 import { generateCampaignRecommendations, askAnalyticsAssistant } from './server/aiService.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
